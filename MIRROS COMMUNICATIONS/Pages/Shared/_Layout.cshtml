@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MIRROS_COMMUNICATIONS</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MIRROS_COMMUNICATIONS.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <button class="menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a class="navbar-brand" asp-area="" asp-page="/Index">
+                <img src="~/Images/logo.png" width="150" height="50" alt="Brand" />
+            </a>
+            <ul class="navbar-ul">
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/Index" ? "active" : "")" asp-area="" asp-page="/Index">HOME</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">OUR SERVICES</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">OUR CLIENTS</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">ABOUT US</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">OUR PROJECTS</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">TESTIMONIALS</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">CAREERS</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">CONTACT US</a>
+                </li>
+            </ul>
+            <ul class="sidebar-ul">
+                <li class="nav-li @(ViewContext.RouteData.Values["page"]?.ToString() == "/Index" ? "active" : "")">
+                    <a class="nav-a" asp-area="" asp-page="/Index">HOME</a>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">OUR SERVICES</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">OUR CLIENTS</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">ABOUT US</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">OUR PROJECTS</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">TESTIMONIALS</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">CAREERS</a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a @(ViewContext.ActionDescriptor.DisplayName == "/" ? "active" : "")" asp-area="" asp-page="/">CONTACT US</a>
+                </li>
+            </ul>
+        </nav>
+    </header>  
+    
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h6>HEAD OFFICE</h6>
+                <div class="footer-item">
+                    <div>
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <p>
+                        Ivoire Building, Bloc B, 5th Floor <br />
+                        Sin El Fil, Lebanon <br />
+                        Postal Code: 2707 7301
+                    </p>
+                </div>
+                <div class="footer-item">
+                    <div>
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <p>
+                        Phone: +961 1 497494 <br />
+                        +961 3 298383
+                    </p>
+                </div>
+                <div class="footer-item">
+                    <div>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <p>
+                       expression@mirrosme.com
+                    </p>
+                </div>
+                <p>Working Hours: Monday - Friday 9am - 4pm</p>
+            </div>
+            <div class="footer-column">
+                <h6>SITE MAP</h6>
+                <ul>
+                    <li>Home</li>
+                    <li>Our Services</li>
+                    <li>Our Clients</li>
+                    <li>About Us</li>
+                    <li>Our Projects</li>
+                    <li>Testimonials</li>
+                    <li>Careers</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h6>NEWSLETTER</h6>
+                <p>Subscribe to our newsletter and stay updated on the latest news!</p>
+                <div class="newsletter">
+                    <input type="text" name="email" placeholder="Your email here" />
+                    <button><i class="fas fa-envelope"></i> </button>
+                </div>             
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/company/mirros-communications/" class="social-icon">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.facebook.com/mirrosme" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/mirrosme/" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/mirrosme?mx=2" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>              
+            </div>
+
+            <div class="copy-right">
+               <p> &copy; Copyright 2024 MIRROS Communications - All Rights Reserved.</p>
+            </div>
+            <div class="company"><a href="https://www.vintob.com/">VINTOB</a></div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
